@@ -21,10 +21,12 @@ const Before = () => {
 
   return (
     <>
-      before logIn!!!
-      <GoogleOAuthProvider clientId={clientId}>
-        <GoogleLogin onSuccess={onLoginSuccess} onError={onLoginFail} />
-      </GoogleOAuthProvider>
+      <div className="h-dvh w-dvw flex flex-col justify-center items-center ">
+      <p className="font-bold font-sans ...">before logIn!!!</p>
+        <GoogleOAuthProvider clientId={clientId}>
+          <GoogleLogin onSuccess={onLoginSuccess} onError={onLoginFail} />
+        </GoogleOAuthProvider>
+      </div>
     </>
   );
 };

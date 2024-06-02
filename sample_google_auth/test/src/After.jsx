@@ -1,10 +1,9 @@
 import React from 'react'
-
 const After = () => {
   return (
-    <div>
-      logged in!!!
-    </div>
+    <>
+      <div className='h-dvh w-dvw flex justify-center items-center '><p className="font-bold font-sans ...">logged in!!!</p></div>
+    </>
   )
 }
 
