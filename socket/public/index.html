@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chatt</title>
+  </head>
+  <body>
+    chatt
+    <!-- <button onclick="createWs()">create ws</button> -->
+    <button id="btn" onclick="sendMsg()">send</button>
+    <input id="input"/>
+    <div id="messages"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      // function createWs() {
+      //   const socket = io();
+      // }
+      const socket = io();
+
+      socket.on("message",(message)=>{
+        // console.log(message)
+        const p=document.createElement("p");
+        p.innerText=message;
+        document.getElementById("messages").appendChild(p);
+      })
+      const sendBtn=document.getElementById('btn')
+      const messageInput=document.getElementById('input');
+      sendBtn.addEventListener("click",(e)=>{
+        const message=messageInput.value;
+        console.log(message);
+        socket.emit("user-message",message);
+      })
+    </script>
+  </body>
+</html>
